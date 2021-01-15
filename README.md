@@ -4,13 +4,13 @@ It's a simple golang sdk for dingtalk webhook bot
 ## Overview
 * [Installation](#Installation)
 * [Usage](#Usage)
-    * [Init Bot](#Init Bot)
-    * [Send Message](#Send Message)
-        * [Send Text](#Send Text Message)
-        * [Send Link](#Send Link)
-        * [Send MarkDown](#Send MarkDown)
-        * [Send ActionCard](#Send ActionCard)
-        * [Send FeedCard](#Send FeedCard)
+    * [Init Bot](#InitBot)
+    * [Send Message](#SendMessage)
+        * [Send Text](#SendTextMessage)
+        * [Send Link](#SendLink)
+        * [Send MarkDown](#SendMarkDown)
+        * [Send ActionCard](#SendActionCard)
+        * [Send FeedCard](#SendFeedCard)
 * [Reference](#Reference)
 * [License](#License)
 
@@ -20,7 +20,7 @@ go get github.com/zouyapeng/dingtalk-bot-sender
 ```
 
 ## Usage
-### Init Bot
+### InitBot
 ```go
 package main
 import "github.com/zouyapeng/dingtalk-bot-sender/sender"
@@ -29,8 +29,8 @@ func main() {
 	bot := sender.NewBot("access_token of your bot", "secret of your bot")
 }
 ```
-### Send Message
-#### Send Text Message
+### SendMessage
+#### SendTextMessage
 ```go
 _ = bot.SendMessage(sender.TextMessage{
     Content:   "This is a text message",
@@ -38,7 +38,7 @@ _ = bot.SendMessage(sender.TextMessage{
 })
 ```
 ![example](https://cdn.jsdelivr.net/gh/zouyapeng/dingtalk-bot-sender/assets/text.png)
-#### Send Link
+#### SendLink
 ```go
 _ = bot.SendMessage(sender.LinkMessage{
     Title:      "This is a link title",
@@ -48,7 +48,7 @@ _ = bot.SendMessage(sender.LinkMessage{
 })
 ```
 ![example](https://cdn.jsdelivr.net/gh/zouyapeng/dingtalk-bot-sender/assets/link.png)
-#### Send MarkDown
+#### SendMarkDown
 ```go
 var markDownContent = `### MarkDown Title
 > This is a markdown message
@@ -68,7 +68,7 @@ _ = bot.SendMessage(sender.MarkDownMessage{
 })
 ```
 ![example](https://cdn.jsdelivr.net/gh/zouyapeng/dingtalk-bot-sender/assets/markdown.png)
-#### Send ActionCard
+#### SendActionCard
 ```go
 _ = bot.SendMessage(sender.ActionCardMessage{
     Title:      "This is a action card title",
@@ -87,7 +87,7 @@ _ = bot.SendMessage(sender.ActionCardMessage{
 })
 ```
 ![example](https://cdn.jsdelivr.net/gh/zouyapeng/dingtalk-bot-sender/assets/action-card.png)
-#### Send FeedCard
+#### SendFeedCard
 ```go
 _ = bot.SendMessage(sender.FeedCardMessage{
     Links: []sender.FeedCardLink{
