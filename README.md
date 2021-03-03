@@ -1,4 +1,6 @@
 # dingtalk-bot-sender
+[![GoDoc](https://godoc.org/github.com/bob-zou/dingtalk-bot-sender/sender?status.svg)](https://pkg.go.dev/github.com/bob-zou/dingtalk-bot-sender/sender?tab=doc)
+
 It's a simple golang sdk for dingtalk webhook bot
 
 ## Overview
